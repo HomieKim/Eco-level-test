@@ -1,9 +1,14 @@
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
+import { ResultWrapper } from 'styles/result.style';
+import { RESULT } from 'utils/constatns';
+import { getData } from 'utils/getData';
 
 const ResultPage: NextPage = () => {
   const router = useRouter();
-  const num = router.query.level?.slice(-1);
+  const query = router.query.level;
+  const num = query?.slice(-1);
+  const data = getData(query as string);
   const onClick = () => {
     const { Kakao, location } = window;
     console.log(location.href);
@@ -29,13 +34,20 @@ const ResultPage: NextPage = () => {
       ],
     });
   };
+  if (
+    router.query.level !== 'lv1' &&
+    router.query.level !== 'lv2' &&
+    router.query.level !== 'lv3' &&
+    router.query.level !== 'lv4'
+  )
+    return <div>잘못된 접근 입니다.</div>;
   return (
-    <div>
-      <div>{router.query.level}의 결과 페이지</div>
+    <ResultWrapper>
+      <div style={{color:"#29263b", fontWeight:400}}>당신의 유형은?</div>
       <button onClick={onClick}>카카오톡 공유하기 버튼</button>
       <div></div>
       <button>다시하기 버튼</button>
-    </div>
+    </ResultWrapper>
   );
 };
 
