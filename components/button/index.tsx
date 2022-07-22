@@ -1,9 +1,11 @@
+import { ReactNode } from 'react';
+import {  ButtonWrapper } from './button.style';
 
 
-const Button = ({radius}:{radius:number}) => {
+const CustomButton = ({children,radius}:{children:ReactNode,radius?:number}) => {
   return (
-    <div>버튼 컴포넌트</div>
+    <ButtonWrapper>{children}</ButtonWrapper>
   )
 };
 
-export default Button;
+export default CustomButton;

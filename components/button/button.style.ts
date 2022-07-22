@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-export const Button = styled.button<{isPick: boolean}>`
+export const Button = styled.button<{isPick?: boolean}>`
 width:240px;
 height:55px;
 border-style:solid;
@@ -17,3 +17,11 @@ color:#000000;`};
   background-color:#32CA00;
 }
 `
+export const ButtonWrapper = styled.button`
+  border: 3px solid #34CA00;
+  width:240px;
+  height:55px;
+  padding:8px 24px;
+  background-color:transparent;
+  border-radius:30px;
+`;
