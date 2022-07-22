@@ -14,8 +14,9 @@ export const GlobalStyle = createGlobalStyle`
   #__next{
     width: 100%;
     height: 100%;
+    overflow:auto;
     background-color:#f5f5f5;
-    }
+  }
   
 
   * {
