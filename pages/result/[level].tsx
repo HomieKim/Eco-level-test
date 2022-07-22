@@ -3,12 +3,17 @@ import { useRouter } from 'next/router';
 import { ResultWrapper } from 'styles/result.style';
 import { RESULT } from 'utils/constatns';
 import { getData } from 'utils/getData';
+import TextBox from 'components/text-box';
+import TypeBox from 'components/type-box';
+import TipBox from 'components/tip-box';
+import TipDetailBox from 'components/tip-detail-box';
 
 const ResultPage: NextPage = () => {
   const router = useRouter();
   const query = router.query.level;
   const num = query?.slice(-1);
   const data = getData(query as string);
+
   const onClick = () => {
     const { Kakao, location } = window;
     console.log(location.href);
@@ -43,7 +48,10 @@ const ResultPage: NextPage = () => {
     return <div>잘못된 접근 입니다.</div>;
   return (
     <ResultWrapper>
-      <div style={{color:"#29263b", fontWeight:400}}>당신의 유형은?</div>
+      <div style={{ color: '#29263b', fontWeight: 400 }}>당신의 유형은?</div>
+      <TypeBox />
+      <TextBox content={data.descripton}></TextBox>
+      <TipBox element={<TipDetailBox />} />
       <button onClick={onClick}>카카오톡 공유하기 버튼</button>
       <div></div>
       <button>다시하기 버튼</button>
