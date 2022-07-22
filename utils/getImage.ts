@@ -4,10 +4,12 @@ export const IMAGES:ImageType = {
   LV2:getImagePath("iconLv2.png"),
   LV3:getImagePath("iconLv3.png"),
   LV4:getImagePath("iconLv4.png"),
+  EARTH:getImagePath("earth.png"),
 }
 type ImageType = {
   LV1:string;
   LV2:string;
   LV3:string;
   LV4:string;
+  EARTH:string;
 }

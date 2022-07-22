@@ -3,5 +3,10 @@ export type QeustionType =  {
   title:string;
   selectType: "list" | "ox";
   // selcetType이 list일때만  selectList가 있음
-  selectList?:Array<string>;
+  selectList?:Array<ItemType>;
+}
+
+type ItemType = {
+  score?:number;
+  content:string;
 }
