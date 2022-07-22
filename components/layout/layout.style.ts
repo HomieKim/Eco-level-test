@@ -5,6 +5,6 @@ export const LayoutWrapper = styled.main`
   height:100vh;
   max-width:480px;
   margin: auto;
-  background-color:#fff;
+  background-color:#F9FFED;;
   position:relative;
 `
