@@ -1,16 +1,24 @@
 import React from 'react'; 
 import {
     YourTypeIs,
-    YourLevel,
-    YourLevelImg
+    YourLevel1,
+    YourLevel2,
 } from './type-box.style';
 
-const TypeBox = () => {
+export interface Props {
+    type1: string;
+    type2: string;
+    element: JSX.Element;
+  }
+
+const TypeBox = (props:Props) => {
     return(
         <div>
             <YourTypeIs>당신의 유형은?</YourTypeIs>
-            <YourLevel>Lv. 1 아직 환경에 관심 없는 <br/> 사고뭉치 금쪽이</YourLevel>
-            <YourLevelImg/>
+            <YourLevel1>{props.type1}</YourLevel1>
+            <br/>
+            <YourLevel2>{props.type2}</YourLevel2>
+            {props.element}
         </div>
     );
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { TipWrapper, TipTop, TipImg, TipTitleFirst, TipTitleSecond } from './tip-box.style';
 
 export interface Props {
-    element: JSX.Element;
+    element: JSX.Element[];
   }
 
 const TipBox = (props:Props) => {
