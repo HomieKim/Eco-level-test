@@ -43,6 +43,7 @@ export const GlobalStyle = createGlobalStyle`
   button {
     cursor: pointer;
     border: none;
+    font-family: 'Noto Sans KR',
   }
 
   ul {

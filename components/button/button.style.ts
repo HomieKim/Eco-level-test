@@ -20,8 +20,10 @@ color:#000000;`};
 export const ButtonWrapper = styled.button`
   border: 3px solid #34CA00;
   width:240px;
-  height:55px;
   padding:8px 24px;
   background-color:transparent;
   border-radius:30px;
+  font-size:14px;
+  font-weight:500;
+ 
 `;
