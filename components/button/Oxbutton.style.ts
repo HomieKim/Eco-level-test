@@ -22,3 +22,8 @@ ${props=>props.isPick===true &&
 `
 // <OxButton isPick={true}><OxImg isPick={true}><Image src="/images/oImg.png" width={95.17} height={95.17}></Image></OxImg></OxButton>
 // <OxButton isPick={false}><OxImg isPick={false}><Image src="/images/xImg.png" width={95.17} height={95.17}></Image></OxImg></OxButton>
+
+export const Wrapper = styled.div`
+  display:flex;
+  gap:20px;
+`

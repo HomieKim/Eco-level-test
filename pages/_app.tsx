@@ -5,13 +5,15 @@ import { GlobalStyle } from 'styles/global.style';
 
 declare global {
   interface Window {
-    Kakao:any;
+    Kakao: any;
   }
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
-    window.Kakao.init(process.env.NEXT_PUBLIC_KAKAO_API_KEY);
+    if (window.Kakao.init(process.env.NEXT_PUBLIC_KAKAO_API_KEY)) {
+      window.Kakao.init(process.env.NEXT_PUBLIC_KAKAO_API_KEY);
+    }
   }, []);
   return (
     <AppLayout>

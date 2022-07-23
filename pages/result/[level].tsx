@@ -9,6 +9,7 @@ import TipBox from 'components/tip-box';
 import TipDetailBox from 'components/tip-detail-box';
 import { IMAGES } from 'utils/getImage';
 import styled from 'styled-components';
+import CustomButton from 'components/button';
 
 const ResultPage: NextPage = () => {
   const router = useRouter();
@@ -16,14 +17,13 @@ const ResultPage: NextPage = () => {
   const num = query?.slice(-1);
   const data = getData(query as string);
   const YourLevelImg = styled.img.attrs({
-    src: `http://localhost:3000/images/iconLv${num}.png`
-})`
+    src: `http://localhost:3000/images/iconLv${num}.png`,
+  })`
     width: 240px;
     height: 240px;
     display: block;
     margin: 0 auto;
-`;
-  
+  `;
 
   const onClick = () => {
     const { Kakao, location } = window;
@@ -54,9 +54,11 @@ const ResultPage: NextPage = () => {
   console.log(data.tips);
 
   const tips = data.tips;
-  
-  const tipsList: JSX.Element[] = tips.map((tip) => <TipDetailBox key={tip.title} title={tip.title} detail={tip.tipsDescription}></TipDetailBox> )
-  
+
+  const tipsList: JSX.Element[] = tips.map((tip) => (
+    <TipDetailBox key={tip.title} title={tip.title} detail={tip.tipsDescription}></TipDetailBox>
+  ));
+
   /* const tipsList: JSX.Element[] = data.useLink? 
   tips.map(tip => tip.linkList?.map(link => <TipDetailBox key={tip.title} title={tip.title} detail={tip.tipsDescription} linkDescription={link.linkDescription} linkUrl={link.linkUrl}></TipDetailBox>) )
   : (tips.map((tip) => <TipDetailBox key={tip.title} title={tip.title} detail={tip.tipsDescription}></TipDetailBox> )) */
@@ -70,12 +72,14 @@ const ResultPage: NextPage = () => {
 
   return (
     <ResultWrapper>
-      <TypeBox type1={data.type1} type2={data.type2} element={<YourLevelImg/>}/>
+      <TypeBox type1={data.type1} type2={data.type2} element={<YourLevelImg />} />
       <TextBox content={data.descripton}></TextBox>
-      <TipBox element = {tipsList} />
-      <button onClick={onClick}>카카오톡 공유하기 버튼</button>
+      <TipBox element={tipsList} />
+      <div onClick={onClick} style={{marginBottom:12}}>
+        <CustomButton >카카오톡 공유하기 버튼</CustomButton>
+      </div>
       <div></div>
-      <button>다시하기 버튼</button>
+      <CustomButton>다시하기 버튼</CustomButton>
     </ResultWrapper>
   );
 };

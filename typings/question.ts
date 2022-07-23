@@ -6,7 +6,7 @@ export type QeustionType =  {
   selectList?:Array<ItemType>;
 }
 
-type ItemType = {
+export type ItemType = {
   score?:number;
   content:string;
 }
